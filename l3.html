@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form{
+width:50rem;
+    margin: auto;    
+    background: linear-gradient(to right, #89ABE3, #EA738D);  
+    border-radius: 5px;
+    border: 5px solid #CBD18F;
+}
+h1
+{color:magenta;
+}
+input[type="float"],input[type="text"]
+{width:5cm;
+padding:10px 10px;
+display:block;
+  font-style: italic;
+    margin: 10px 0;
+    border-radius: 5px;
+ border-color:lightblue;
+}
+input[type="radio"]
+{    cursor: pointer;
+display:block;
+}
+.btn{
+background-color: #3A6B35;
+    color: white;
+    border-radius: 5px;
+border-color:#CBD18F;
+padding:10px 10px;
+    margin: 7px 0;
+}
+button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<center>
+<div class="form">
+    <h1><center>Loan Approval</center></h1>
+    <form action="/predict" method="POST">
+    <input type="text" placeholder="enter application_id" name="application_id"
+    required/><br>
+    <input type="float" placeholder="enter Applicant Income" name="Total_Income"
+    required/><br>
+    <label>credit history</label><br>
+    <input type="radio" name="Credit_History" value="1.0" required/>good<br>
+    <input type="radio" name="Credit_History" value="0.0" required/>bad<br>
+    <input type="float" placeholder="enter Loan Amount" name="LoanAmount"
+    required/><br>
+    <center>
+    <button type="submit" class="btn">predict</button>
+    </center>
+       <center><h3>{{prediction_text}}</h3></center>
+    </form>
+    </div>
+    </center>
+    </body>
+    </html>
+
